@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gimnasio PowerFit</title>
+  <style>
+    :root {
+      --primary-color: #ffffff;
+      --accent-color: #000000;
+      --background-overlay: rgba(0, 0, 0, 0.6);
+      --card-radius: 12px;
+      --card-padding: 1.5em;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: url('https://via.placeholder.com/1600x900') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    header, footer {
+      background-color: var(--background-overlay);
+      padding: 2em 1em;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      color: var(--accent-color);
+    }
+
+    nav {
+      background-color: rgb(239, 116, 0);
+      display: flex;
+      justify-content: center;
+      padding: 1em;
+      gap: 1.5em;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    section {
+      background-color: var(--background-overlay);
+      margin: 2em auto;
+      padding: var(--card-padding);
+      max-width: 1000px;
+      border-radius: var(--card-radius);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1em;
+      background-color: #fff;
+      color: #000;
+      border-radius: var(--card-radius);
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 0.75em;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f4f4f4;
+    }
+
+    label, input, select, textarea {
+      width: 100%;
+      max-width: 500px;
+      margin: 0.5em auto;
+      display: block;
+    }
+
+    input, select, textarea {
+      padding: 0.75em;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    input[type="submit"] {
+      background-color: var(--accent-color);
+      color: #fffdfd;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #00cc66;
+    }
+
+    img {
+      max-width: 100%; 
+      border-radius: var(--card-radius);
+      margin-top: 1em; 
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>BIENVENIDO A TREEFITNES</h1>
+    <p><h2>¡Tu cuerpo, tu templo!</h2></p>
+  </header>
+
+  <nav>
+    <a onclick="mostrarSeccion('historia')">Historia</a>
+    <a onclick="mostrarSeccion('vision')">Visión y Misión</a>
+    <a onclick="mostrarSeccion('planes')">Planes</a>
+    <a onclick="mostrarSeccion('formulario')">Formulario</a>
+    <a onclick="mostrarSeccion('dashboard')">Dashboard</a>
+  </nav>
+
+  <main>
+    <section id="historia">
+      <h2>Nuestra Historia</h2>
+      <p>Fundada en 2009 por Edgard Corona, TREEFITNES nació con el objetivo de democratizar el fitness de alto nivel en Brasil. Inspirada en modelos de bajo costo, la cadena se expandió rápidamente desde São Paulo a otras ciudades del país y, en 2011, se convirtió en la primera marca brasileña del rubro en llegar al mercado internacional, abriendo en México.
+
+Hoy, TREEFITNES es la red de gimnasios más grande de América Latina, con presencia en más de 15 países y más de 1,500 unidades. Además de su crecimiento físico, ha innovado con marcas como Bio Ritmo y plataformas digitales como Queima Diária y TotalPass. Desde su apertura en la bolsa en 2021, mantiene su compromiso de ofrecer fitness accesible y de calidad.</p>
+      <img src="istockphoto-2027278927-612x612.jpg" alt="Historia del gimnasio"> 
+      
+    </section>
+
+   <section id="vision" style="display:none">
+      <h2>Visión y Misión</h2>
+      <p><strong>Visión:</strong> Ser el gimnasio líder en bienestar integral en Latinoamérica.</p>
+      <p><strong>Misión:</strong> Ofrecer un servicio de calidad con entrenadores certificados y tecnología de punta.</p>
+      <video controls>
+        <source src="video1.mp4" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+      </video>
+    </section>
+
+    <section id="planes" style="display:none">
+      <h2>Planes del Gimnasio</h2>
+      <table>
+        <tr>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Entrenador</th>
+          <th>Costo</th>
+        </tr>
+        <tr>
+          <td>Plan Básico</td>
+          <td>Acceso a máquinas y zona de pesas</td>
+          <td>Laura Pérez</td>
+          <td>S/25 mensual</td>
+        </tr>
+        <tr>
+          <td>Plan Premium</td>
+          <td>Incluye clases dirigidas y nutrición</td>
+          <td>Carlos Gómez</td>
+          <td>S/45 mensual</td>
+        </tr>
+      </table>
+      <img src="https://via.placeholder.com/300x200" alt="Entrenamiento">
+    </section>
+
+    <section id="formulario" style="display:none">
+      <h2>Formulario de Contacto y Compra de Plan</h2>
+      <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="comentarios">Comentarios:</label>
+        <textarea id="comentarios" name="comentarios"></textarea>
+
+        <label for="paquete">Seleccione un paquete mensual:</label>
+        <select id="paquete" name="paquete">
+          <option value="basico">Plan Básico -  S/25 mensual</option>
+          <option value="premium">Plan Premium - S/45 mensual</option>
+        </select>
+
+        <input type="submit" value="Enviar">
+      </form>
+    </section>
+
+    <section id="dashboard" style="display:none">
+      <h2>Dashboard Administrativo</h2>
+      <h3>Cuotas a Pagar</h3>
+      <table>
+        <tr>
+          <th>Cliente</th>
+          <th>Plan</th>
+          <th>Próximo Pago</th>
+          <th>Estado</th>
+        </tr>
+        <tr>
+          <td>Ana Torres</td>
+          <td>Básico</td>
+          <td>10/06/2025</td>
+          <td>Pendiente</td>
+        </tr>
+        <tr>
+          <td>Juan Vega</td>
+          <td>Premium</td>
+          <td>15/06/2025</td>
+          <td>Pagado</td>
+        </tr>
+      </table>
+
+      <h3>Clases Programadas</h3>
+      <table>
+        <tr>
+          <th>Clase</th>
+          <th>Hora</th>
+          <th>Entrenador</th>
+        </tr>
+        <tr>
+          <td>Cardio Funcional</td>
+          <td>08:00 AM</td>
+          <td>Laura Pérez</td>
+        </tr>
+        <tr>
+          <td>CrossFit</td>
+          <td>06:00 PM</td>
+          <td>Carlos Gómez</td>
+        </tr>
+      </table>
+
+      <h3>Lista de Clientes</h3>
+      <table>
+        <tr>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Teléfono</th>
+        </tr>
+        <tr>
+          <td>Ana Torres</td>
+          <td>ana@example.com</td>
+          <td>51+ 950 698 867</td>
+        </tr>
+        <tr>
+          <td>Juan Vega</td>
+          <td>juan@example.com</td>
+          <td>51+ 964 875 378</td>
+        </tr>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 TREEFITNES - Todos los derechos reservados ©</p>
+    <p>Autores:</p>
+    <p>Piedra Reyes Sofia</p>
+    <P>Prado Rodriguez Dougla</P>
+    <p>Cajo Rojas Rocio</p>
+  </footer>
+
+  <script>
+    function mostrarSeccion(id) {
+      const secciones = document.querySelectorAll('main section');
+      secciones.forEach(sec => sec.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
